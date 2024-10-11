@@ -116,9 +116,9 @@ private struct TextViewRepresentable: UIViewRepresentable {
 //            textView.setNeedsLayout()
 //        }
 
-        if !textView.isEditable {
-            textView.setNeedsLayout()
-        }
+//        if !textView.isEditable {
+//            textView.setNeedsLayout()
+//        }
 
         if textView.isSelectable != isEnabled {
             textView.isSelectable = isEnabled
