@@ -86,6 +86,7 @@ private struct TextViewRepresentable: NSViewRepresentable {
         textView.isHorizontallyResizable = !options.contains(.wrapLines)
         textView.showsLineNumbers = options.contains(.showLineNumbers)
         textView.textSelection = NSRange()
+        textView.isEditable = false
 
         context.coordinator.isUpdating = true
         textView.attributedText = NSAttributedString(styledAttributedString(textView.typingAttributes))
@@ -116,9 +117,9 @@ private struct TextViewRepresentable: NSViewRepresentable {
             textView.textSelection = selection
         }
 
-        if textView.isEditable != isEnabled {
-            textView.isEditable = isEnabled
-        }
+//        if textView.isEditable != isEnabled {
+//            textView.isEditable = isEnabled
+//        }
 
         if textView.isSelectable != isEnabled {
             textView.isSelectable = isEnabled
