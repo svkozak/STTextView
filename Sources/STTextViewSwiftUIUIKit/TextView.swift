@@ -84,6 +84,7 @@ private struct TextViewRepresentable: UIViewRepresentable {
         textView.textDelegate = context.coordinator
         textView.highlightSelectedLine = options.contains(.highlightSelectedLine)
         textView.isHorizontallyResizable = !options.contains(.wrapLines)
+        textView.isVerticallyResizable = true
         textView.showsLineNumbers = options.contains(.showLineNumbers)
 
         context.coordinator.isUpdating = true
