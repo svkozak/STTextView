@@ -86,6 +86,7 @@ private struct TextViewRepresentable: UIViewRepresentable {
         textView.isHorizontallyResizable = !options.contains(.wrapLines)
         textView.isVerticallyResizable = true
         textView.showsLineNumbers = options.contains(.showLineNumbers)
+        textView.isEditable = false
 
         context.coordinator.isUpdating = true
         textView.attributedText = NSAttributedString(styledAttributedString(textView.typingAttributes))
