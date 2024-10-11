@@ -116,8 +116,7 @@ private struct TextViewRepresentable: UIViewRepresentable {
 //            textView.setNeedsLayout()
 //        }
 
-        if textView.isEditable != isEnabled {
-            textView.isEditable = isEnabled
+        if !textView.isEditable {
             textView.setNeedsLayout()
         }
 
@@ -133,6 +132,10 @@ private struct TextViewRepresentable: UIViewRepresentable {
 
         if options.contains(.wrapLines) != textView.isHorizontallyResizable {
             textView.isHorizontallyResizable = !options.contains(.wrapLines)
+            textView.setNeedsLayout()
+        }
+        
+        if textView.isVerticallyResizable {
             textView.setNeedsLayout()
         }
 
